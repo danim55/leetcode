@@ -5,7 +5,7 @@ import java.util.List;
 class Solution {
 
     // First solution
-    public List<List<Integer>> generateFirstTry(int numRows) {
+    public static List<List<Integer>> generateFirstTry(int numRows) {
         List<List<Integer>> pascalTriangle = new ArrayList<>();
         for (int i = 0; i < numRows; i++) {
             List auxiliarList = new ArrayList<>();
@@ -27,7 +27,7 @@ class Solution {
     }
 
     // Final solution
-    public List<List<Integer>> generateSecondTry(int numRows) {
+    public static List<List<Integer>> generateSecondTry(int numRows) {
         List<List<Integer>> triangle = new ArrayList<>();
         triangle.add(Arrays.asList(1));
 
@@ -43,5 +43,9 @@ class Solution {
         }
 
         return triangle;
+    }
+
+    public static void main(String args[]) {
+        generateSecondTry(5);
     }
 }
