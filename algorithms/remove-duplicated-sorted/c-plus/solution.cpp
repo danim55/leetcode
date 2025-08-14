@@ -1,3 +1,5 @@
+#include <print>
+
 class Solution
 {
 public:
@@ -17,6 +19,7 @@ public:
             }
             counter++;
         }
+        std::println("Different numbers {}", counter);
         return counter;
     }
 };
