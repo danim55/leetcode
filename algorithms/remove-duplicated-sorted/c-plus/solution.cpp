@@ -5,21 +5,17 @@ class Solution
 public:
     int removeDuplicates(vector<int> &nums)
     {
-        int k = 1;
-        int counter = 0;
-        for (int i = 0; i < nums.size(); i++)
+        int n = nums.size();
+        int j = 0;
+
+        for (int i = 0; i < n; i++)
         {
-            while (nums[i] == nums[k] && k < nums.size())
+            if (nums[i] != nums[j])
             {
-                k++;
+                j++;
+                nums[j] = nums[i];
             }
-            if (k < nums.size())
-            {
-                nums[i+1] = nums[k];
-            }
-            counter++;
         }
-        std::println("Different numbers {}", counter);
-        return counter;
-    }
+        return j + 1;
+    };
 };
