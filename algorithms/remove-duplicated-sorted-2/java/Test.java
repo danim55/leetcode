@@ -1,8 +1,7 @@
-
 import java.util.Arrays;
 
-class Solution {
-    public int removeDuplicates(int[] nums) {
+public class Test {
+    public static int removeDuplicates(int[] nums) {
         int length = nums.length;
         int j = 0;
         int counter = 0;
@@ -23,4 +22,10 @@ class Solution {
         System.out.println(counter);
         return counter;
     }
+
+    public static void main(String args[]) {
+        int[] nums = { 1, 1, 1, 2, 2, 3 };
+        removeDuplicates(nums);
+    }
+
 }
