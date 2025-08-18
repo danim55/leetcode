@@ -5,7 +5,7 @@ public class Test {
         int j = 1;
         int counter = 1;
 
-        for (int i = 0; i < length; i++) {
+        for (int i = 1; i < length; i++) {
             if (nums[i - 1] == nums[i]) {
                 counter++;
             } else {
@@ -17,7 +17,7 @@ public class Test {
             }
         }
 
-        return counter;
+        return j;
     }
 
     public static void main(String args[]) {
