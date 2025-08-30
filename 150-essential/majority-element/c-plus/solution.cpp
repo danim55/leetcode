@@ -22,5 +22,6 @@ public:
                 counter--;
             }
         }
+        return candidate;
     }
 };
