@@ -8,6 +8,13 @@ class Solution {
             if (counter == 0) {
                 candidate = nums[i];
             }
+
+            if (candidate == nums[i]) {
+                counter++;
+            } else {
+                counter--;
+            }
         }
+        return candidate;
     }
 }
