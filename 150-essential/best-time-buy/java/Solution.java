@@ -5,11 +5,12 @@ class Solution {
         int profit = 0;
         int difference;
         for (int i = 1; i < n; i++) {
-            difference = prices[i] - min;            
-            if(difference > profit) {
-                profit = difference;
-            } else {
+            difference = prices[i] - min;
+            if (prices[i] < min) {
                 min = prices[i];
+            }
+            if (difference > profit) {
+                profit = difference;
             }
         }
         return profit;
