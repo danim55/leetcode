@@ -9,11 +9,11 @@ public:
         int difference;
         for (int i = 1; i < n; i++)
         {
-            difference = prices[i] - min;
             if (prices[i] < min)
             {
                 min = prices[i];
             }
+            difference = prices[i] - min;
             if (difference > profit)
             {
                 profit = difference;
