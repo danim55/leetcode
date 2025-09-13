@@ -5,19 +5,20 @@ class Solution {
         int difference;
 
         for (int i = 1; i < prices.length; i++) {
-            System.out.println(profit);
-            System.out.println(share);
             difference = prices[i] - share;
             if (difference > 0) {
                 profit += difference;
-                i++;
+                if (prices[i] > prices[i + 1]) {
+                    i++;
+                    share = prices[i];
+                } else {
+                    share = prices[i];
+                }
+            } else {
+                if (prices[i] < share) {
+                    share = prices[i];
+                }
             }
-            if (prices[i] < share) {
-                share = prices[i];
-            }
-            System.out.println(difference);
-            System.out.println(profit);
-            System.out.println(share);
         }
         return profit;
     }
