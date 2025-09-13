@@ -8,17 +8,8 @@ class Solution {
             difference = prices[i] - share;
             if (difference > 0) {
                 profit += difference;
-                if (prices[i] > prices[i + 1]) {
-                    i++;
-                    share = prices[i];
-                } else {
-                    share = prices[i];
-                }
-            } else {
-                if (prices[i] < share) {
-                    share = prices[i];
-                }
             }
+            share = prices[i];
         }
         return profit;
     }
