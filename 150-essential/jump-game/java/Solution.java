@@ -2,23 +2,21 @@
 class Solution {
     public boolean canJump(int[] nums) {
         int n = nums.length;
-        if (n == 1) return true;
-        int maxPosition = 0;
-        int currentMaxPosition;
-        int difference;
+        if (n == 1)
+            return true;
+        int maxJump = 0;
         for (int i = 0; i < n; i++) {
-            currentMaxPosition = nums[i] + i;
-            difference = currentMaxPosition - maxPosition;
-            if (difference > 0) {
-                maxPosition = currentMaxPosition;
-            }
-            if (maxPosition >= n-1) {
-                return true;
-            }
-            if (maxPosition <= i) {
+            if (maxJump < nums[i] + i)
+                maxJump = nums[i] + i;
+
+            if (maxJump <= i) {
                 return false;
             }
+
+            if (maxJump >= n - 1) {
+                return true;
+            }
         }
-        return maxPosition >= n-1;
+        return maxJump >= n - 1;
     }
 }
