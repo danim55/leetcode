@@ -6,7 +6,8 @@ class Solution {
         int total = 0;
         int count = 0;
         Arrays.sort(nums);
-        for (int i = 0; i > n; i++) {
+        for (int i = n - 1; i > 0; i--) {
+            System.out.println(nums[i]);
             total += nums[i];
             count++;
             if (total >= n - 1)
