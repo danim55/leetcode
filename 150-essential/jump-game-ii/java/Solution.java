@@ -13,10 +13,10 @@ class Solution {
 
             if (i == end) {
                 smallest += 1;
-
+                end = far;
             }
         }
 
-        return 0;
+        return smallest;
     }
 }
