@@ -18,7 +18,6 @@ class Solution {
         }
 
         int maxReach = Math.min(i + nums[i], n - 1);
-        // try the farthest reachable positions first (same as Python range(max_reachable_index, i, -1))
         for (int next = maxReach; next > i; next--) {
             backtrack(nums, next, jumps + 1, best, n);
         }
