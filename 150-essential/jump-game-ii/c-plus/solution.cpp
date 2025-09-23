@@ -10,6 +10,8 @@ public:
 
         for (int i = 0; i < n - 1; i++)
         {
+            far = max(far, i + nums[i]);
+
             if (i == end)
             {
                 smallest += 1;
@@ -19,4 +21,4 @@ public:
 
         return smallest;
     }
-}
+};
