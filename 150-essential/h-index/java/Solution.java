@@ -1,14 +1,18 @@
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
     public int hIndex(int[] citations) {
         int hIndex = 0;
         int citationsNumber = citations.length;
         int candidate = 0;
-        int[] currentArray = {};  
+        List<Integer> currentArray = new ArrayList<>();
 
         for (int i = 0; i < citationsNumber; i++) {
-            if (Arrays.stream())
+            currentArray.add(citations[i]);
+            if (Math.round(currentArray.stream().mapToDouble(a -> a).average().getAsDouble()) > currentArray.size()) {
+                hIndex = candidate;
+            }
             candidate++;
         }
         return hIndex;
