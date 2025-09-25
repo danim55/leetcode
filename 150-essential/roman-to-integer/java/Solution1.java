@@ -7,14 +7,14 @@ class Solution {
                 'L', 50, 'C', 100, 'D', 500, 'M', 1000);
 
         int intValue = 0;
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < s.length() - 1; i++) {
+            int current = map.get(s.charAt(i));
+            int next = i + 1 > s.length() ? map.get(s.charAt(i + 1)) : 0;
 
-            char character = s.charAt(i);
-
-            if (character < s.charAt(i + 1)) {
-                intValue -= map.get(character);
+            if (current < next) {
+                intValue -= current;
             } else {
-                intValue += map.get(character);
+                intValue += current;
             }
         }
 
