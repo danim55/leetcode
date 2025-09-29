@@ -6,19 +6,15 @@ class Solution {
         for (int j = 1; j < citations.length + 1; j++) {
 
             for (int i = 0; i < citations.length; i++) {
-                if (citations[i] > j) {
-                    System.out.println("Citation: " + citations[i]);
-                    System.out.println("J: " + j);
-                    System.out.println("Num papers: " + numPapers);
+                if (citations[i] >= j) {
                     numPapers++;
                 }
                 if (numPapers >= j) {
                     hIndex = j;
-                    numPapers = 0;
                     break;
                 }
             }
-
+            numPapers = 0;
         }
 
         return hIndex;
