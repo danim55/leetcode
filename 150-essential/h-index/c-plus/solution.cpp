@@ -10,17 +10,17 @@ public:
         {
             for (int j = 0; j < citations.size() - 1; j++)
             {
-                if (citations[j] >= j)
+                if (citations[j] >= i)
                 {
                     numberPapers++;
                 }
-                if (numberPapers >= j)
+                if (numberPapers >= i)
                 {
-                    hIndex = j;
+                    hIndex = i;
                     break;
                 }
             }
-            numberPapers = 0;
         }
+        return hIndex;
     }
 };
