@@ -4,10 +4,10 @@ public:
     int hIndex(vector<int> &citations)
     {
         int hIndex = 0;
-        int numberOfPapers[] = new int[citations.size() + 1];
+        vector<int> numberOfPapers(citations.size() + 1, 0);
         int counterOfPapers = 0;
 
-        for (int i = 0; i < citations.size())
+        for (int i = 0; i < citations.size(); i++)
         {
             if (citations[i] >= citations.size())
             {
