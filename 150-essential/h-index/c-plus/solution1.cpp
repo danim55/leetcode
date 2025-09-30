@@ -11,11 +11,11 @@ public:
         {
             if (citations[i] >= citations.size())
             {
-                numberOfPapers[citations.size()] = citations[i];
+                numberOfPapers[citations.size()]++;
             }
             else
             {
-                numberOfPapers[citations[i]] = citations[i];
+                numberOfPapers[citations[i]]++;
             }
         }
 
