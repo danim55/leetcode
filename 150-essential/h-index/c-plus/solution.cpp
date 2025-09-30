@@ -8,7 +8,7 @@ public:
 
         for (int i = 1; i <= citations.size() + 1; i++)
         {
-            for (int j = 0; j < citations.size() - 1; j++)
+            for (int j = 0; j < citations.size(); j++)
             {
                 if (citations[j] >= i)
                 {
@@ -20,6 +20,7 @@ public:
                     break;
                 }
             }
+            numberPapers = 0;
         }
         return hIndex;
     }
