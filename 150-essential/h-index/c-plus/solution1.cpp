@@ -4,7 +4,7 @@ public:
     int hIndex(vector<int> &citations)
     {
         int hIndex = 0;
-        int numberOfPapers[citations.size() + 1];
+        int numberOfPapers[] = new int[citations.size() + 1];
         int counterOfPapers = 0;
 
         for (int i = 0; i < citations.size())
@@ -28,6 +28,6 @@ public:
                 break;
             }
         }
+        return hIndex;
     }
-    return hIndex;
 };
