@@ -1,5 +1,6 @@
 
 import java.util.HashMap;
+import java.util.Random;
 
 class RandomizedSet {
 
@@ -28,7 +29,9 @@ class RandomizedSet {
     }
 
     public int getRandom() {
-
+        Random random = new Random();
+        Object[] values = randomNumbers.values().toArray();
+        return (Integer) values[random.nextInt(values.length)];
     }
 }
 
