@@ -1,12 +1,10 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
 
 class RandomizedSet {
 
-    private final Map<Integer, Integer> randomMap;
+    private final HashMap<Integer, Integer> randomMap;
     private final List<Integer> randomList;
 
     public RandomizedSet() {
@@ -44,7 +42,8 @@ class RandomizedSet {
     }
 
     public int getRandom() {
-        return randomList.get(new Random().nextInt(0, randomList.size()));
+        int index = (int) (Math.random() * randomList.size());
+        return randomList.get(index);
     }
 }
 
