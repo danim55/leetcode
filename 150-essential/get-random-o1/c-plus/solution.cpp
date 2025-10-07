@@ -1,10 +1,25 @@
-class RandomizedSet() {
+class RandomizedSet {
    public:
-    RandomizedSet() {}
+    vector<int> values;
+    map<int, int> valuesIndex;
 
-    bool insert(int val) {}
+    RandomizedSet() {
+        values = {};
+        valuesIndex = {};
+    }
 
-    bool remove(int val) {}
+    bool insert(int val) {
+        if (valuesIndex.at(val)) {
+            return false;
+        }
 
-    int getRandom() {}
-}
+        values.insert(values.end() - 1, val);
+        valuesIndex.insert({values.size() - 1, val});
+
+        return true;
+    }
+
+    bool remove(int val) { return false; }
+
+    int getRandom() { return 1; }
+};
