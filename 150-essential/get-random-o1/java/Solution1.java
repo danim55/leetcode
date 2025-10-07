@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 class RandomizedSet {
 
@@ -14,25 +15,27 @@ class RandomizedSet {
     }
 
     public boolean insert(int val) {
-        if (randomMap.containsValue(val)) {
+        if (randomMap.containsKey(val)) {
             return false;
         }
 
         randomList.add(val);
-        randomMap.put(randomList.size() - 1, val);
+        randomMap.put(val, randomList.size() - 1);
 
         return true;
     }
 
     public boolean remove(int val) {
-        if (randomMap.containsValue(val)) {
-
-        } else {
+        if (!randomMap.containsKey(val)) {
             return false;
         }
+        randomList.remove(randomMap.get(val));
+        randomMap.remove(val);
+        return true;
     }
 
     public int getRandom() {
+        return randomList.get(new Random().nextInt());
     }
 }
 
