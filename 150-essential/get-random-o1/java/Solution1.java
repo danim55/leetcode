@@ -14,16 +14,22 @@ class RandomizedSet {
     }
 
     public boolean insert(int val) {
-        if (randomMap.containsKey(val)) {
+        if (randomMap.containsValue(val)) {
             return false;
-        } else {
-            randomList.add(val);
-            randomMap.put(randomList.size(), val);
-            return true;
         }
+
+        randomList.add(val);
+        randomMap.put(randomList.size() - 1, val);
+
+        return true;
     }
 
     public boolean remove(int val) {
+        if (randomMap.containsValue(val)) {
+
+        } else {
+            return false;
+        }
     }
 
     public int getRandom() {
