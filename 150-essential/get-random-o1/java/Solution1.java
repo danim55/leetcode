@@ -29,13 +29,22 @@ class RandomizedSet {
         if (!randomMap.containsKey(val)) {
             return false;
         }
-        randomList.remove(randomMap.get(val));
+        int indexToRemove = randomMap.get(val);
+        // We assign the last value of the list to the index of the map that is going to
+        // be removed
+        randomMap.put(randomList.get(randomList.size() - 1), indexToRemove);
+        // We remove the value from the map
         randomMap.remove(val);
+        // We update the list seting the last value of the list to the index that is
+        // going to be removed
+        randomList.set(indexToRemove, randomList.get(randomList.size() - 1));
+        // We remove the value received from the list
+        randomList.remove(randomList.size() - 1);
         return true;
     }
 
     public int getRandom() {
-        return randomList.get(new Random().nextInt());
+        return randomList.get(new Random().nextInt(0, randomList.size()));
     }
 }
 
