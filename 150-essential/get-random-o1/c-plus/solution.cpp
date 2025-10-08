@@ -30,10 +30,13 @@ class RandomizedSet {
         // Erase the value received from the map
         valuesIndex.erase(val);
         // Move the value to be removed to the end of the list
-        
+        values[indexToRemove] = temp;
+        values.pop_back();
 
         return true;
     }
 
-    int getRandom() { return 1; }
+    int getRandom() { 
+
+    }
 };
