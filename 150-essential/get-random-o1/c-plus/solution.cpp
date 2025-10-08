@@ -19,7 +19,21 @@ class RandomizedSet {
         return true;
     }
 
-    bool remove(int val) { return false; }
+    bool remove(int val) {
+        if (!valuesIndex.at(val)) {
+            return false;
+        }
+
+        int indexToRemove = valuesIndex.at(val);
+        // Change the value of the index to delete by the current last item of the list
+        valuesIndex[indexToRemove] = values.at(values.size() - 1);
+        // Erase the value received from the map
+        valuesIndex.erase(val);
+        // Move the value to be removed to the end of the list
+        
+
+        return true;
+    }
 
     int getRandom() { return 1; }
 };
