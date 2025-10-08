@@ -13,8 +13,8 @@ class RandomizedSet {
             return false;
         }
 
-        values.insert(values.end() - 1, val);
-        valuesIndex.insert({values.size() - 1, val});
+        values.push_back(val);
+        valuesIndex.insert({val, values.size() - 1});
 
         return true;
     }
@@ -38,7 +38,7 @@ class RandomizedSet {
     }
 
     int getRandom() {
-        int r = rand() % values.size() - 1;
+        int r = rand() % values.size();
         return values[r];
     }
 };
