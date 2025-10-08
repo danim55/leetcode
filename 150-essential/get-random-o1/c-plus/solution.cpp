@@ -25,7 +25,8 @@ class RandomizedSet {
         }
 
         int indexToRemove = valuesIndex.at(val);
-        // Change the value of the index to delete by the current last item of the list
+        // Change the value of the index to delete by the current last item of
+        // the list
         valuesIndex[indexToRemove] = values.at(values.size() - 1);
         // Erase the value received from the map
         valuesIndex.erase(val);
@@ -36,7 +37,8 @@ class RandomizedSet {
         return true;
     }
 
-    int getRandom() { 
-
+    int getRandom() {
+        int r = rand() % values.size() - 1;
+        return values[r];
     }
 };
