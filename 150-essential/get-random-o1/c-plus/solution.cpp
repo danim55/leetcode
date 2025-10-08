@@ -9,7 +9,7 @@ class RandomizedSet {
     }
 
     bool insert(int val) {
-        if (valuesIndex.at(val)) {
+        if (valuesIndex.find(val) != valuesIndex.end()) {
             return false;
         }
 
@@ -20,7 +20,7 @@ class RandomizedSet {
     }
 
     bool remove(int val) {
-        if (!valuesIndex.at(val)) {
+        if ( valuesIndex.find(val) == valuesIndex.end()) {
             return false;
         }
 
@@ -31,7 +31,7 @@ class RandomizedSet {
         // Erase the value received from the map
         valuesIndex.erase(val);
         // Move the value to be removed to the end of the list
-        values[indexToRemove] = temp;
+        values[indexToRemove] = values[values.size() - 1];
         values.pop_back();
 
         return true;
