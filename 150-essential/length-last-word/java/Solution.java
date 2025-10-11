@@ -13,7 +13,7 @@ class Solution {
 
             if (s.charAt(i) == ' ' && condition && length > 0) {
                 break;
-            }
+            }   
         }
         return length;
     }
