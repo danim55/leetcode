@@ -9,7 +9,8 @@ class Solution {
             }
         }
         for (String str : strs) {
-            for (int j = 0; j < strs[j].length(); j++) {
+            System.out.println(strs[0].length());
+            for (int j = 0; j < str.length() - 1; j++) {
                 if (str.charAt(j) != longerWord.charAt(j)) {
                     break;
                 }
